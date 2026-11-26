@@ -8,8 +8,8 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-blue.svg"></a>
-  <a href="https://github.com/dogukansahil/Dofram/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/dogukansahil/Dofram?sort=semver"></a>
-  <a href="https://github.com/dogukansahil/Dofram/actions/workflows/build.yml"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/dogukansahil/Dofram/build.yml?branch=main"></a>
+  <a href="https://github.com/dogukansahil/Dofram/releases/latest"><img alt="Latest release" src="docs/images/badge-release.svg"></a>
+  <a href="https://github.com/dogukansahil/Dofram/actions/workflows/build.yml"><img alt="Build status" src="https://github.com/dogukansahil/Dofram/actions/workflows/build.yml/badge.svg?branch=main"></a>
   <img alt="Platform: Windows 10 and 11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0a7bbb">
   <img alt="Linux: planned" src="https://img.shields.io/badge/Linux-planned-lightgrey">
   <img alt="Language: C" src="https://img.shields.io/badge/language-C11-555555">
