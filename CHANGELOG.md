@@ -14,6 +14,11 @@ Every change that reaches `main` is listed under *Unreleased* first. A release m
 
 ## [Unreleased]
 
+### Changed
+
+- Release pages carry this changelog's notes for that version, how to install or run Dofram without installing, how to update, and the SHA-256 checksum, instead of an automatic commit list.
+- README: the release badge is a small SVG in the repository and the build badge comes from GitHub Actions, because GitHub's image proxy showed the previous shields.io badges as broken images.
+
 ## [1.0.0] - 2026-11-26
 
 First public version.
