@@ -1,0 +1,87 @@
+// Dofram - screenshot tool for Windows
+// Copyright (C) 2026 Dogukan Sahil and Dofram contributors
+// SPDX-License-Identifier: GPL-3.0-only
+
+#include <windows.h>
+#include "resource.h"
+#include "version.h"
+
+#pragma code_page(65001)
+
+IDI_APP ICON "..\\assets\\dofram.ico"
+
+1 RT_MANIFEST "dofram.manifest"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION DOFRAM_VERSION_MAJOR,DOFRAM_VERSION_MINOR,DOFRAM_VERSION_PATCH,0
+ PRODUCTVERSION DOFRAM_VERSION_MAJOR,DOFRAM_VERSION_MINOR,DOFRAM_VERSION_PATCH,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", DOFRAM_PUBLISHER
+            VALUE "FileDescription", "Dofram screenshot tool"
+            VALUE "FileVersion", DOFRAM_VERSION_STR
+            VALUE "InternalName", "Dofram"
+            VALUE "LegalCopyright", DOFRAM_COPYRIGHT ". GPL-3.0-only."
+            VALUE "OriginalFilename", "Dofram.exe"
+            VALUE "ProductName", "Dofram"
+            VALUE "ProductVersion", DOFRAM_VERSION_STR
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 330, 292
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Dofram settings"
+FONT 9, "Segoe UI", 400, 0, 0x1
+BEGIN
+    LTEXT           "Capture hotkey", -1, 8, 10, 80, 10
+    EDITTEXT        IDC_HOTKEY, 92, 8, 150, 14, ES_READONLY | ES_AUTOHSCROLL
+    LTEXT           "Click the box, then press the new key combination. Backspace clears it.", 1101, 92, 25, 232, 10
+
+    LTEXT           "After selecting", -1, 8, 42, 80, 10
+    COMBOBOX        IDC_AFTER, 92, 40, 230, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    LTEXT           "Save folder", -1, 8, 60, 80, 10
+    EDITTEXT        IDC_FOLDER, 92, 58, 150, 14, ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...", IDC_BROWSE, 246, 57, 42, 16
+    PUSHBUTTON      "Open", IDC_OPEN, 290, 57, 32, 16
+
+    LTEXT           "File name", -1, 8, 80, 80, 10
+    EDITTEXT        IDC_PATTERN, 92, 78, 230, 14, ES_AUTOHSCROLL
+    LTEXT           "{date} = 2026-11-26, {time} = 22-05-31, {ms} = milliseconds", 1102, 92, 95, 232, 10
+
+    LTEXT           "Format", -1, 8, 112, 80, 10
+    COMBOBOX        IDC_FORMAT, 92, 110, 230, 60, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    LTEXT           "Starting tool", -1, 8, 130, 80, 10
+    COMBOBOX        IDC_TOOL, 92, 128, 230, 120, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    LTEXT           "Options", -1, 8, 148, 80, 10
+    AUTOCHECKBOX    "Start with Windows (in the system tray)", IDC_STARTUP, 92, 147, 230, 11
+    AUTOCHECKBOX    "Also copy to the clipboard when saving", IDC_COPYONSAVE, 92, 160, 230, 11
+    AUTOCHECKBOX    "Close the editor after saving", IDC_CLOSESAVE, 92, 173, 230, 11
+    AUTOCHECKBOX    "Close the editor after copying", IDC_CLOSECOPY, 92, 186, 230, 11
+    AUTOCHECKBOX    "Show notifications", IDC_NOTIFY, 92, 199, 230, 11
+
+    LTEXT           "Shortcuts", -1, 8, 218, 80, 10
+    PUSHBUTTON      "Desktop shortcut", IDC_DESKTOP, 92, 216, 90, 16
+    PUSHBUTTON      "Add to Start menu", IDC_STARTMENU, 186, 216, 90, 16
+    LTEXT           "Opening the shortcut starts a capture. You can also give it a key in the shortcut's Properties window.", 1103, 92, 235, 232, 18
+
+    LTEXT           "", IDC_CFGPATH, 8, 258, 314, 10, SS_PATHELLIPSIS
+    DEFPUSHBUTTON   "Save", IDOK, 216, 272, 50, 16
+    PUSHBUTTON      "Cancel", IDCANCEL, 272, 272, 50, 16
+END

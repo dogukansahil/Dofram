@@ -1,0 +1,19 @@
+# Build output
+/build/
+
+# Editors and IDEs
+.vs/
+.vscode/
+*.suo
+*.user
+
+# Compiler and linker by-products outside build/
+*.obj
+*.res
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# Portable-mode settings of a local test run
+dofram.ini
